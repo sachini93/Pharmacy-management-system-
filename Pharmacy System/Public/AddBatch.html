@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pharmacy System</title>
+    <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com">
+    <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
+ 
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="controllers/App.js"></script>
+	<script src="JS/ControllerH.js"></script>
+	 
+	  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway|Candal">
+    <link rel="stylesheet" type="text/css" href="css/noEdit/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/noEdit/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/noEdit/style2.css">
+	<link rel="stylesheet" type="text/css" href="css/HForm-style.css">
+	<link rel="stylesheet" type="text/css" href="css/form-kalhara.css">
+ 
+    <style type="text/css">
+        .style1
+        {
+            width: 99%;
+            background-color: #FFFFFF;
+        }
+        .style6
+        {
+            height: 22px;
+            width: 222px;
+        }
+        .style7
+        {
+            width: 46px;
+        }
+        .style8
+        {
+            height: 22px;
+            width: 46px;
+        }
+        .style19
+        {
+            height: 30px;
+            width: 46px;
+        }
+        .style21
+        {
+            height: 30px;
+            width: 222px;
+        }
+        .style23
+        {
+            height: 39px;
+            width: 46px;
+        }
+        .style25
+        {
+            height: 39px;
+            width: 222px;
+        }
+        .style27
+        {
+            width: 222px
+        }
+        .style33
+        {
+            height: 30px;
+            width: 354px;
+        }
+        .style34
+        {
+            height: 22px;
+            width: 354px;
+        }
+        .style36
+        {
+            height: 39px;
+            width: 354px;
+        }
+        .style37
+        {
+            width: 354px;
+        }
+        .style38
+        {
+            height: 30px;
+            width: 82px;
+        }
+        .style39
+        {
+            height: 22px;
+            width: 82px;
+        }
+        .style41
+        {
+            height: 39px;
+            width: 82px;
+        }
+        .style42
+        {
+            width: 82px
+        }
+        .style43
+        {
+            height: 30px;
+            width: 172px;
+        }
+        .style44
+        {
+            height: 22px;
+            width: 172px;
+        }
+        .style46
+        {
+            height: 39px;
+            width: 172px;
+        }
+        .style47
+        {
+            width: 172px;
+        }
+        .style48
+        {
+            height: 13px;
+            width: 46px;
+        }
+        .style50
+        {
+            height: 13px;
+            width: 222px;
+        }
+        .style51
+        {
+            height: 13px;
+            width: 172px;
+        }
+        .style53
+        {
+            height: 13px;
+            width: 354px;
+        }
+        .style54
+        {
+            height: 13px;
+            width: 82px;
+        }
+        .style55
+        {
+            height: 1px;
+            width: 46px;
+        }
+        .style57
+        {
+            height: 1px;
+            width: 222px;
+        }
+        .style58
+        {
+            height: 1px;
+            width: 172px;
+        }
+        .style60
+        {
+            height: 1px;
+            width: 354px;
+        }
+        .style61
+        {
+            height: 1px;
+            width: 82px;
+        }
+        .style69
+        {
+            height: 30px;
+            width: 600px;
+        }
+        .style70
+        {
+            height: 22px;
+            width: 600px;
+        }
+        .style72
+        {
+            height: 39px;
+            width: 600px;
+        }
+        .style73
+        {
+            width: 600px;
+        }
+        .style74
+        {
+            height: 1px;
+            width: 600px;
+        }
+        .style75
+        {
+            height: 13px;
+            width: 600px;
+        }
+        .style77
+        {
+            height: 25px;
+            width: 46px;
+        }
+        .style78
+        {
+            height: 25px;
+            width: 600px;
+        }
+        .style79
+        {
+            height: 25px;
+            width: 222px;
+        }
+        .style80
+        {
+            height: 25px;
+            width: 172px;
+        }
+        .style82
+        {
+            height: 25px;
+            width: 354px;
+        }
+        .style83
+        {
+            height: 25px;
+            width: 82px;
+        }
+        .style84
+        {
+            height: 30px;
+            width: 469px;
+        }
+        .style85
+        {
+            height: 22px;
+            width: 469px;
+        }
+        .style87
+        {
+            height: 39px;
+            width: 469px;
+        }
+        .style88
+        {
+            width: 469px;
+        }
+        .style89
+        {
+            height: 1px;
+            width: 469px;
+        }
+        .style90
+        {
+            height: 13px;
+            width: 469px;
+        }
+        .style92
+        {
+            height: 25px;
+            width: 469px;
+        }
+        .style93
+        {
+            height: 51px;
+            width: 46px;
+        }
+        .style94
+        {
+            height: 51px;
+            width: 600px;
+        }
+        .style95
+        {
+            height: 51px;
+            width: 222px;
+        }
+        .style96
+        {
+            height: 51px;
+            width: 172px;
+        }
+        .style97
+        {
+            height: 51px;
+            width: 469px;
+        }
+        .style98
+        {
+            height: 51px;
+            width: 354px;
+        }
+        .style99
+        {
+            height: 51px;
+            width: 82px;
+        }
+        .style100
+        {
+            height: 26px;
+            width: 46px;
+        }
+        .style101
+        {
+            height: 26px;
+            width: 600px;
+        }
+        .style102
+        {
+            height: 26px;
+            width: 222px;
+        }
+        .style103
+        {
+            height: 26px;
+            width: 172px;
+        }
+        .style104
+        {
+            height: 26px;
+            width: 469px;
+        }
+        .style105
+        {
+            height: 26px;
+            width: 354px;
+        }
+        .style106
+        {
+            height: 26px;
+            width: 82px;
+        }
+        .style107
+        {
+            height: 54px;
+            width: 46px;
+        }
+        .style108
+        {
+            height: 54px;
+            width: 600px;
+        }
+        .style109
+        {
+            height: 54px;
+            width: 222px;
+        }
+        .style110
+        {
+            height: 54px;
+            width: 172px;
+        }
+        .style111
+        {
+            height: 54px;
+            width: 469px;
+        }
+        .style112
+        {
+            height: 54px;
+            width: 354px;
+        }
+        .style113
+        {
+            height: 54px;
+            width: 82px;
+        }
+    </style>
+
+    <script language="javascript" type="text/javascript">
+        
+    </script>
+</head>
+
+<body ng-app="myApp">
+
+<!--banner-->
+<section id="banner" class="banner">
+    <div class="bg-color">
+        <div class="loggedPerson">
+            <img src="img/user1.png" width="100px" height="70px" style="float:right">
+			<p style="float:right;color:black;margin-top:20px;font-size:20px">Chief-Pharmacist</br><a href="Login.html" class="logout">(logout)</a></p>
+        </div>
+        <nav class="navbar navbar-default navbar-fixed-top" style="height: 100% ; width: 15%">
+            <div class="line">
+
+            </div>
+            <div class="navContainer">
+
+            <div class="navbar-header" style="margin-top: 30px">
+                <!--button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button-->
+                <a class="navbar-brand" href="#"><img src="img/logo-pharmacy.png"
+                                                      class="img-responsive" style="margin-top: -16px;"></a>
+            </div>
+            </br>
+            <div class="collapse navbar-collapse navbar-right" id="myNavbar" style="float: left;width: 100%">
+                <ul class="nav navbar-nav" style="padding-left: 0px">
+                    <li class="active"><a href="indexCP.html">Home</a></li>
+                    <li class=""><a href="DrugStock.html">Pharmacy Stock</a></li>
+                    <li class=""><a href="DrugInfo.html">Update Drugs</a></li>
+                    <li class=""><a href="ViewRequests.html">View Requests</a></li>
+                    <li class=""><a href="AddBatch.html">Add New Batch</a></li>
+                    <li class=""><a href="AddSup.html">New Supplier</a></li>
+					<li class=""><a href="Email.html">Email</a></li>
+					<li class=""><a href="AddDrugExcel.html">Add Drug</a></li>
+                </ul>
+            </div>
+            </div>
+
+        </nav>
+
+        <div class="develop" style="height:750px">
+            <div class="workArea" style="height:700px">
+
+                <!--Guys plz use only this workarea to code your own-->
+<div style="margin-top:20px;margin-left:0px;height:1200px">
+ 
+  <div style="margin-top:10px;margin-left:20px;margin-right:15px;background-color:white"  ng-controller="myCtrlAddInfo">
+  </br>
+      <h3 style="margin-left:13px;">Add new batch</h3>
+   
+  <table class="style1">
+       
+      <tr>
+          <td class="style19">
+              </td>
+          <td class="style69">
+              <strong>Select drug category</strong></td>
+          <td class="style21">
+              </td>
+          <td class="style43">
+              &nbsp;</td>
+          <td class="style84">
+              </td>
+          <td class="style33">
+              &nbsp;</td>
+          <td class="style38">
+              &nbsp;</td>
+      </tr>
+      <tr>
+          <td class="style8">
+          </td>
+          <td class="style70">
+  Drug Category</td>
+         <td>
+          <select style="width:344px; height:40px" ng-model="category" ng-touched="clear()" ng-change="getDrugs(category)"   placeholder="Select Category"
+                      ng-options="y for (x, y) in DrugCategory">
+					  <option value="" disabled selected>Select Category</option>
+					  </select>&nbsp;</td>
+          <td class="style44">
+              &nbsp;</td>
+          <td class="style85">
+          </td>
+          <td class="style34">
+              &nbsp;</td>
+          <td class="style39">
+              &nbsp;</td>
+      </tr>
+      <tr>
+          <td class="style100">
+              </td>
+          <td class="style101">
+              </td>
+          <td class="style102">
+              </td>
+          <td class="style103">
+              </td>
+          <td class="style104">
+              </td>
+          <td class="style105">
+              </td>
+          <td class="style106">
+              </td>
+      </tr>
+      <tr>
+          <td class="style23">
+              </td>
+          <td class="style72">
+              <strong>Add received drug</strong></td>
+          <td class="style25">
+              </td>
+          <td class="style46">
+              &nbsp;</td>
+          <td class="style87">
+              <strong>Calculate quantity</strong></td>
+          <td class="style36">
+              &nbsp;</td>
+          <td class="style41">
+              &nbsp;</td>
+      </tr>
+      <tr>
+          <td class="style7">
+              &nbsp;</td>
+          <td class="style73">
+              Drug name</td>
+          <td class="style27">
+              <select style="width:344px; height:40px" ng-model="name" ng-change="getDrugFromName(name)" placeholder="Select name"
+                  >
+					  <option value="" disabled selected>Select Name</option>
+					  <option ng-repeat="row in druglist" value="{{row.name}}">{{row.name}}</option>
+					  </select>&nbsp;</td>
+          <td class="style47">
+              &nbsp;</td>
+          <td class="style88">
+              Number of cartoons</td>
+          <td class="style37">
+              <input id="Text6" type="text" style="width:159px; height:30px" ng-model="cartoon"/></td>
+          <td class="style42">
+              &nbsp;</td>
+      </tr>
+      <tr>
+          <td class="style7">
+              &nbsp;</td>
+          <td class="style73">
+              &nbsp;</td>
+          <td class="style27">
+              &nbsp;</td>
+          <td class="style47">
+              &nbsp;</td>
+          <td class="style88">
+              &nbsp;</td>
+          <td class="style37">
+              &nbsp;</td>
+          <td class="style42">
+              &nbsp;</td>
+      </tr>
+      <tr>
+          <td class="style7">
+              &nbsp;</td>
+          <td class="style73">
+              Drug type</td>
+          <td class="style27">
+                {{type}}</td>
+          <td class="style47">
+              &nbsp;</td>
+          <td class="style88">
+              Number of cards per cartoons</td>
+          <td class="style37">
+              <input id="Text7" type="text" style="width:159px; height:30px" ng-model="card"/></td>
+          <td class="style42">
+              &nbsp;</td>
+      </tr>
+      <tr>
+          <td class="style8">
+              </td>
+          <td class="style70">
+              </td>
+          <td class="style6">
+              </td>
+          <td class="style44">
+              &nbsp;</td>
+          <td class="style85">
+              </td>
+          <td class="style34">
+              &nbsp;</td>
+          <td class="style39">
+              &nbsp;</td>
+      </tr>
+      <tr>
+          <td class="style7">
+              &nbsp;</td>
+          <td class="style73">
+              Content</td>
+          <td class="style27">
+                {{content}}</td>
+          <td class="style47">
+              &nbsp;</td>
+          <td class="style88">
+              Number of tablets per card</td>
+          <td class="style37">
+              <input id="Text8" type="text" style="width:159px; height:30px" ng-model="tablet"/></td>
+          <td class="style42">
+              &nbsp;</td>
+      </tr>
+      <tr>
+          <td class="style55">
+              </td>
+          <td class="style74">
+              </td>
+          <td class="style57">
+              </td>
+          <td class="style58">
+              </td>
+          <td class="style89">
+              </td>
+          <td class="style60">
+              </td>
+          <td class="style61">
+              </td>
+      </tr>
+      <tr>
+          <td class="style48">
+              </td>
+          <td class="style75">
+              Content type</td>
+          <td class="style50">
+                {{contentType}}</td>
+          <td class="style51">
+              </td>
+          <td class="style90">
+              </td>
+          <td class="style53">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="Button3" 
+                  
+                  
+                  style="background-color: #006699; width:148px; height:34px; color: #FFFFFF;" type="button" 
+                  value="Calculate quantity" ng-click="CalQuality()"/></td>
+          <td class="style54">
+              </td>
+      </tr>
+      <tr>
+          <td class="style93">
+              </td>
+          <td class="style94">
+              </td>
+          <td class="style95">
+              </td>
+          <td class="style96">
+              </td>
+          <td class="style97">
+              Quantity&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <input id="Text12" type="text" style="width:159px; height:30px" ng-model="total" ></td>
+          <td class="style98">
+              </td>
+          <td class="style99">
+              </td>
+      </tr>
+      <tr>
+          <td class="style8">
+              &nbsp;</td>
+       <!--   <td class="style70">
+              Batch number</td>
+          <td class="style6">
+              <input id="Text11" type="text" style="width:159px; height:30px"  ng-model="BNo"/></td>   -->
+          <td class="style44">
+              &nbsp;</td>
+          <td class="style85">
+              &nbsp;</td>
+          <td class="style34">
+              &nbsp;</td>
+          <td class="style39">
+              &nbsp;</td>
+      </tr>
+      <tr>
+          <td class="style8">
+              &nbsp;</td>
+          <td class="style70">
+              &nbsp;</td>
+          <td class="style6">
+              &nbsp;</td>
+          <td class="style44">
+              &nbsp;</td>
+          <td class="style85">
+              &nbsp;</td>
+          <td class="style34">
+              &nbsp;</td>
+          <td class="style39">
+              &nbsp;</td>
+      </tr>
+      <tr>
+          <td class="style77">
+              </td>
+          <td class="style78">
+              Manufacture date</td>
+          <td class="style79">
+              <input  ng-model="manufacDate" type="date" id="datepicker1" style="width:159px; height:30px" /></td>
+          <td class="style80"> 
+              </td>
+          <td class="style92">
+              </td>
+          <td class="style82">
+              </td>
+          <td class="style83">
+              </td>
+      </tr>
+      <tr>
+          <td class="style8">
+              &nbsp;</td>
+          <td class="style70">
+              &nbsp;</td>
+          <td class="style6">
+              &nbsp;</td>
+          <td class="style44">
+              &nbsp;</td>
+          <td class="style85">
+              &nbsp;</td>
+          <td class="style34">
+              &nbsp;</td>
+          <td class="style39">
+              &nbsp;</td>
+      </tr>
+      <tr>
+          <td class="style107">
+              </td>
+          <td class="style108">
+              Expire date</td>
+          <td class="style109">
+              <input ng-model="expireDate" id="datepicker" type="date" style="width:159px; height:30px"  />
+			  
+			    </td>
+          <td class="style110">
+              </td>
+          <td class="style111">
+              </td>
+          <td class="style112">
+              </td>
+          <td class="style113">
+              </td>
+      </tr>
+      <tr>
+          <td class="style8">
+              &nbsp;</td>
+          <td class="style70">
+              &nbsp;</td>
+           <td>&nbsp;<input id="Button4" 
+                  
+                   style="background-color: #006699; width:131px; height:34px; color: #FFFFFF;" type="button" 
+                  value="Reset"  ng-click="ClearBatch2()"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="Button1" 
+                  style="background-color: #006699; width:131px; height:34px; color: #FFFFFF;" type="button" 
+                  value="Add Batch" ng-click="addBatch()"/></td>			  
+          <td class="style6" >
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td class="style44">
+              &nbsp;</td>
+          <td class="style85">
+              &nbsp;</td>
+          <td class="style34">
+              &nbsp;</td>
+          <td class="style39">
+              &nbsp;</td>
+      </tr>
+      <tr>
+          <td class="style8">
+              &nbsp;</td>
+          <td class="style70">
+              &nbsp;</td>
+          <td class="style6">
+              <label id="label" ng-bind="satate" style="color: #CC0000"></label>&nbsp;</td>
+          <td class="style44">
+              &nbsp;</td>
+          <td class="style85">
+              &nbsp;</td>
+          <td class="style34">
+              &nbsp;</td>
+          <td class="style39">
+              &nbsp;</td>
+      </tr>
+  </table>
+  </div>
+  
+ 
+  
+  </div>        
+
+        </div>
+
+        </div>
+    </div>
+
+
+</section>
+<!--/ banner-->
+
+<!--footer-->
+<footer id="footer">
+
+    <div class="footer-line">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    © Copyright Pharmacy-corp. All Rights Reserved
+
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--/ footer-->
+
+
+
+</body>
+</html>

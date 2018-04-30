@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pharmacy System-view Requests</title>
+    <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com">
+    <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
+
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway|Candal">
+    <link rel="stylesheet" type="text/css" href="css/noEdit/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/noEdit/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/noEdit/style2.css">
+    <link rel="stylesheet" type="text/css" href="css/table-sachini.css">
+
+</head>
+<body >
+<!--banner-->
+<section id="banner" class="banner">
+    <div class="bg-color">
+        <div class="loggedPerson">
+            <img src="img/user3.png" width="100px" height="70px" style="float:right">
+			
+        </div>
+        <nav class="navbar navbar-default navbar-fixed-top" style="height: 100% ; width: 15%">
+            <div class="line">
+
+            </div>
+            <div class="navContainer">
+
+            <div class="navbar-header" style="margin-top: 30px">
+                <!--button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button-->
+                <a class="navbar-brand" href="#"><img src="../img/logo-pharmacy.png"
+                                                      class="img-responsive" style="margin-top: -16px;"></a>
+            </div>
+            </br>
+            <div class="collapse navbar-collapse navbar-right" id="myNavbar" style="float: left;width: 100%">
+                <ul class="nav navbar-nav" style="padding-left: 0px">
+                    <li class="active"><a href="indexDoc.html">Home</a></li>
+					<li class=""><a href="addPrescription.html">Add Prescription</a></li>
+					<li class=""><a href="viewRequest.html">View Order Requests</a></li>
+					<li class=""><a href="EmailDoc.html">Email</a></li>
+                </ul>
+            </div>
+
+            </div>
+        </nav>
+
+        <div class="develop">
+            <div class="workArea">
+                <div class="workArea-1" ng-app="myApp">
+                    <div style="float:right; width:1000px" class="scalable" ng-controller="controller_1" >
+                <table class="table-style-1" style="width:100%" >
+                    <br>
+
+                    <caption>View Requests</caption>
+                    <thead>
+                    <tr name="table-tr-1">
+                        <th>Drug name</th>
+                        <th>Requested Qty.</th>
+                        <th>Available Qty.</th>
+                        <th>Date</th>
+                        <th>Supplier</th>
+                        <th>Status</th>
+                        <th>Approve</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!--<script type="text/javascript" src="disable_checkBox.js"></script>-->
+                    <tr name="table-tr-2" ng-repeat="x in requestList">
+                        <!--load drug request details data-->
+                        <td> {{x.drug_name}}</td>
+                        <td> {{x.requestedQty}}</td>
+                        <td> {{x.availableQty}}</td>
+                        <td> {{x.date}}</td>
+                        <td> {{x.supplier}}</td>
+                        <td> {{x.status}}</td>
+
+                      <!--  <script type="text/javascript">
+                            var disable=function(){
+                            if(document.getElementById("serNo").ng-checked==true)
+                                document.getElementById("serNo").checked=false;
+                            }
+                        </script>-->
+
+                        <td><input type="checkbox" id="serNo" name="serNo" value="" ng-if="x.status!='approved'" ng-click="rowSelected(x._id)"/></td>
+
+                    </tr>
+
+                    </tbody>
+                </table>
+                    </div>
+
+
+            </div>
+
+        </div>
+        </div>
+    </div>
+
+
+</section>
+<!--/ banner-->
+
+<!--footer-->
+<footer id="footer">
+
+    <div class="footer-line">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    © Copyright Pharmacy-corp. All Rights Reserved
+
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--/ footer-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="JS/App_sachini.js"></script>
+<script src="JS/view_drug_request.controller.js"></script>
+
+
+</body>
+</html>

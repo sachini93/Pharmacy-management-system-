@@ -1,0 +1,35 @@
+.divEmail{
+    background-color: white;
+    height: 92%;
+    margin: 20px 20px 20px 20px;
+    box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
+    border-radius: 10px;
+    border: 6px solid #305A72;
+}
+
+.emailtxt{
+    width:362px;
+    height:30px
+}
+
+h3{
+    margin-left: 35px;
+}
+
+.tbl1{
+    margin-top: 40px;
+    margin-left: 200px;
+}
+
+.col1{
+    width: 200px;
+
+}
+
+.col2{
+    width: 150px;
+}
+
+#txt1{
+
+}

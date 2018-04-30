@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pharmacy System</title>
+    <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com">
+    <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
+
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway|Candal">
+    <link rel="stylesheet" type="text/css" href="css/noEdit/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/noEdit/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/noEdit/style2.css">
+	<link rel="stylesheet" type="text/css" href="css/styles-mh.css">
+    <link rel="stylesheet" type="text/css" href="css/SendRequest.css">
+	
+	<script src="JS/angular.min.js"></script>
+    <script src="JS/viewequests.js"></script>
+
+</head>
+<body ng-app="requestApp">
+<!--banner-->
+<section id="banner" class="banner">
+    <div class="bg-color">
+        <div class="loggedPerson">
+            <img src="img/user1.png" width="100px" height="70px" style="float:right">
+			<p style="float:right;color:black;margin-top:20px;font-size:20px">Chief-Pharmacist</br><a href="Login.html" class="logout">(logout)</a></p>
+        </div>
+        <nav class="navbar navbar-default navbar-fixed-top" style="height: 100% ; width: 15%">
+            <div class="line">
+
+            </div>
+            <div class="navContainer">
+
+            <div class="navbar-header" style="margin-top: 30px">
+                <!--button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button-->
+                <a class="navbar-brand" href="#"><img src="img/logo-pharmacy.png"
+                                                      class="img-responsive" style="margin-top: -16px;"></a>
+            </div>
+            </br>
+            <div class="collapse navbar-collapse navbar-right" id="myNavbar" style="float: left;width: 100%">
+                <ul class="nav navbar-nav" style="padding-left: 0px">
+                    <li class="active"><a href="indexCP.html">Home</a></li>
+                    <li class=""><a href="DrugStock.html">Pharmacy Stock</a></li>
+                    <li class=""><a href="DrugInfo.html">Update Drugs</a></li>
+                    <li class=""><a href="ViewRequests.html">View Requests</a></li>
+                    <li class=""><a href="AddBatch.html">Add New Batch</a></li>
+                    <li class=""><a href="AddSup.html">New Supplier</a></li>
+					<li class=""><a href="Email.html">Email</a></li>
+					<li class=""><a href="AddDrugExcel.html">Add Drug</a></li>
+                </ul>
+            </div>
+            </div>
+
+        </nav>
+
+        <div class="develop">
+            <div class="workArea">
+
+                <!--Guys plz use only this workarea to code your own-->
+				<div class="d1">
+
+                    <h3>Drug Requests</h3>
+                    <div class="head1" align="center">
+
+                        
+                        <input type="text" id="txt1" onkeyup="myFunction()" style="width:300px;color:black;" placeholder="Search for names..."/>
+
+                    </div>
+
+					<div ng-controller="requestController" style="overflow-y:scroll">
+                    <table class="tg" align="center" id="tbl1">
+
+                        <tr>
+                            <th class="stockHeader">Drug name</th>
+                            <th class="stockHeader">Available Quantity</th>
+                            <th class="stockHeader">Requested Date</th>
+                            <th class="stockHeader">Status</th>
+							<th class="stockHeader">Requesting Amount</th>
+                            <th class="stockHeader">Doctor's approval</th>
+                        </tr>
+                        <tr ng-repeat="x in requests">
+                            <td class="drug_name">{{x.drug_name}}</td>
+                            <td class="availableQty">{{x.availableQty}}</td>
+                            <td class="date">{{x.date}}</td>
+                            <td class="status">{{x.status}}</td>
+							<td class="status"><input type="text" id="reqQty" ng-model="reqQty"/></td>
+                            <td class="sendEmail"><input type="button" ng-click="proceed(x._id)" class="placeOrder" value="Proceed"></td>
+                        </tr>
+                    </table>
+					</div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+</section>
+<!--/ banner-->
+
+<!--footer-->
+<footer id="footer">
+
+    <div class="footer-line">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    © Copyright Pharmacy-corp. All Rights Reserved
+
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--/ footer-->
+
+
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+
+    <link rel="stylesheet" type="text/css" href="css/login_styles.css">
+	<script src="JS/angular.min.js"></script>
+    <script src="JS/login.js"></script>
+
+</head>
+<body ng-app="loginApp">
+
+<div class="login-page">
+    <div ng-controller="loginController" class="form">
+        <!--form class="register-form">
+            <input type="text" placeholder="name"/>
+            <input type="password" placeholder="password"/>
+            <input type="text" placeholder="email address"/>
+            <button>create</button>
+            <p class="message">Already registered? <a href="#">Sign In</a></p>
+        </form-->
+		
+        <form class="login-form">
+            <input type="text" placeholder="username" ng-model="username"/>
+            <input type="password" placeholder="password" ng-model="password"/>
+            <button type="button" name="submit"  ng-click="login()">login</button>
+            <p class="message"><a href="#">Forget password? </a></p>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

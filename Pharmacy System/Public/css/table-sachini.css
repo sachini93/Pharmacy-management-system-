@@ -1,0 +1,88 @@
+.form-style-9{
+    margin-left: 100px;
+    margin-right: 100px;
+    max-height: 90%;
+    overflow-y: scroll;
+
+}
+.workArea-1{
+    width: 1000px;
+    padding: 8% 0 0;
+    margin: auto;
+
+}
+.scalable{
+    /*width: 400px;*/
+    overflow-y: scroll;
+    position: relative;
+    /*z-index: 1;*/
+    background: #FFFFFF;
+    max-width: 100%;
+    margin: 0 auto 100px;
+    padding: 20px;
+    text-align: center;
+    /*box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);*/
+}
+.table-style-1{
+    max-width: 1200px;
+    background: #FAFAFA;
+    padding: 10px;
+    margin: 20px auto;
+    /*margin-left: 20px;*/
+    margin-top: 20px;
+    box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
+    border-radius: 10px;
+    border: 1px solid black;
+}
+.table-style-1 thead th,.table-style-1 tbody td{
+    font: 16px Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+
+}
+
+.workArea-1 input[type="submit"] {
+    -moz-box-shadow: inset 0px 1px 0px 0px #3985B1;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #3985B1;
+    box-shadow: inset 0px 1px 0px 0px #3985B1;
+    background-color: #216288;
+    border: 1px solid #17445E;
+    display: inline-block;
+    cursor: pointer;
+    color: #FFFFFF;
+    padding: 8px 18px;
+    text-decoration: none;
+    font: 12px Arial, Helvetica, sans-serif;
+}
+.workArea-1 input[type="submit"]:hover {
+    background: linear-gradient(to bottom, #2D77A2 5%, #337DA8 100%);
+    background-color: #28739E;
+}
+.form-prescriptionDetails{
+    background: #FFFFFF;
+}
+.btnDiv{
+    padding: 30px;
+}
+
+
+.form-patienDetails table td,.form-prescriptionDetails table td{
+    text-align: right;
+    font: 16px Arial, Helvetica, sans-serif;
+    padding: 10px;
+    /*border-bottom: 1px solid #ddd;*/
+    padding: 10px;
+
+
+}
+.form-patienDetails,.form-prescriptionDetails{
+    margin-left: 20px;
+    margin-right: 0px;
+    text-align: center;
+    padding: 20px;
+}
+
+.table-style-1 tr:hover,.form-patienDetails table tr:hover,.form-prescriptionDetails table tr:hover{
+    background-color: #f5f5f5
+}

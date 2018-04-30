@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pharmacy System-add Prescription</title>
+    <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com">
+    <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
+
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway|Candal">
+    <link rel="stylesheet" type="text/css" href="css/noEdit/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/noEdit/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/noEdit/style2.css">
+    <link rel="stylesheet" type="text/css" href="css/form-kalhara.css">
+    <link rel="stylesheet" type="text/css" href="css/table-sachini.css">
+
+
+</head>
+<body >
+<!--banner-->
+<section id="banner" class="banner">
+    <div class="bg-color">
+        <div class="loggedPerson">
+            <img src="img/user3.png" width="100px" height="70px" style="float:right">
+        </div>
+        <nav class="navbar navbar-default navbar-fixed-top" style="height: 100% ; width: 15%">
+
+
+            <div class="navbar-header">
+                <!--button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button-->
+                <a class="navbar-brand" href="#"><img src="../img/logo-pharmacy.png"
+                                                      class="img-responsive" style="margin-top: -16px;"></a>
+            </div>
+            </br>
+            <div class="collapse navbar-collapse navbar-right" id="myNavbar" style="float: left;width: 100%">
+                <ul class="nav navbar-nav" style="padding-left: 0px">
+                    <li class="active"><a href="indexDoc.html">Home</a></li>
+					<li class=""><a href="addPrescription.html">Add Prescription</a></li>
+					<li class=""><a href="viewRequest.html">View Order Requests</a></li>
+					<li class=""><a href="EmailDoc.html">Email</a></li>
+                </ul>
+            </div>
+
+
+        </nav>
+
+        <div class="workArea" style="height: 505px"  ng-app="myApp" ng-controller="controller_2">
+
+
+
+
+
+            <form class="form-style-9"  >
+                <li >Add prescription</li>
+                <br>
+                <ul>
+
+                        <div class="form-patienDetails">
+                            <table>
+
+                                <tr>
+                                    <td><label>Date</label>
+                                    <td><label id="time">
+                                        <script type="text/javascript">
+                                            var today = new Date();
+                                            document.getElementById('time').innerHTML=today.toDateString();
+                                        </script>
+                                    </label></td>
+                                    <!--<td><label>Doctor Name: </label><label>{{doctor.name}}</label></td>-->
+                                </tr>
+                                <tr></tr>
+
+                                <tr><td><label>Patient name</label></td><td><input type="" name="field1" class="field-style field-split align-right" ng-model="patient2.name"/></td><td><button ng-click="search(patient2.name)">search</button></td></tr>
+                                <tr><td><label>Age</label></td><td><input type="" name="field2" class="field-style field-split align-right" ng-model="patient2.age"/></td></tr>
+                                <!--<tr><td><label>Admitted Date</label></td><td><input type="" name="field3" class="field-style field-split align-right" ng-model="patient2.Emergency-tp"></td></tr>-->
+                                <tr></tr>
+                                <tr></tr>
+                                <form >
+
+                                        <tr><td><label>Drug name</label></td><td>
+                                            <select ng-model="selectedDrug" ng-options="option.name for option in drugs" ng-selected="{{defaultvalue == option.name}}" style="width:200px" >
+                                              <option  ng-if="false" >Select Drug Name</option>
+
+                                          </select>
+                                        </td></tr>
+
+                                        <tr><td><label>Strength</label></td><td><input type="text" class="field-style field-split align-right"   ng-model="prescription2.strength"/></td></tr>
+                                        <tr><td><label>Duration</label></td><td><input type="text"  class="field-style field-split align-right"   ng-model="prescription2.duration" /></td></tr>
+                                        <tr><td><label>Frequency</label></td><td><input type="text" class="field-style field-split align-right"  ng-model="prescription2.frequency"/></td></tr>
+
+                                </form>
+                    </table>
+        </div>
+
+                    <li></li>
+                    <div class="form-prescriptionDetails">
+
+                    </div>
+
+                    <div class="btnDiv">
+                    <li>
+                        <input type="submit" value="Add" ng-click="addDrug()"/>
+                        <input type="reset" value="Reset"/>
+                        <input type="submit" value="Update" ng-click="update(prescription2._id)"/>
+                    </li>
+                    </div>
+
+                    <li></li>
+                    <div class="form-prescriptionList">
+                        <li>
+                            <div class="scalable">
+                                <table class="table-style-1">
+                                    <br>
+                                    <thead>
+                                    <tr name="table-tr-1" >
+                                        <th>Drug name</th>
+                                        <th>Strength</th>
+                                        <th>Duration</th>
+                                        <th>Frequency</th>
+                                        <th>remove</th>
+                                        <th>Edit</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr name="table-tr-2" ng-repeat="x in prescriptionList">
+                                        <!--some dB operatons-->
+                                        <td> {{x.name}}</td>
+                                        <td> {{x.strength}}</td>
+                                        <td> {{x.duration}}</td>
+                                        <td> {{x.frequency}}</td>
+                                        <td><input type="button" value="Remove" ng-click="delete(x._id)"></td>
+                                        <td><input type="button" value="Edit" ng-click="edit(x._id,x.name)"></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </li>
+                    </div>
+                </ul>
+            </form>
+                    </div>
+        </div>
+    </div>
+    </div>
+
+
+</section>
+<!--/ banner-->
+
+<!--footer-->
+<footer id="footer">
+
+    <div class="footer-line">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    © Copyright Pharmacy-corp. All Rights Reserved
+
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--/ footer-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="JS/App_sachini.js"></script>
+<script src="JS/controller2.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp1">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pharmacy System</title>
+    <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com">
+    <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
+
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway|Candal">
+    <link rel="stylesheet" type="text/css" href="css/noEdit/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/noEdit/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/noEdit/style2.css">
+    <link rel="stylesheet" type="text/css" href="css/form-kalhara.css">
+
+    <script src="JS/angular.min.js"></script>
+
+
+</head>
+<body >
+<!--banner-->
+<section id="banner" class="banner">
+    <div class="bg-color">
+        <div class="loggedPerson">
+            <img src="img/user1.png" width="100px" height="70px" style="float:right">
+			<p style="float:right;color:black;margin-top:20px;font-size:20px">Chief-Pharmacist</br><a href="Login.html" class="logout">(logout)</a></p>
+        </div>
+        <nav class="navbar navbar-default navbar-fixed-top" style="height: 100% ; width: 15%">
+
+
+            <div class="navbar-header">
+                <!--button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button-->
+                <a class="navbar-brand" href="#"><img src="img/logo-pharmacy.png"
+                                                      class="img-responsive" style="margin-top: -16px;"></a>
+            </div>
+            </br>
+            <div class="collapse navbar-collapse navbar-right" id="myNavbar" style="float: left;width: 100%">
+                <ul class="nav navbar-nav" style="padding-left: 0px">
+                    <li class="active"><a href="indexCP.html">Home</a></li>
+                    <li class=""><a href="DrugStock.html">Pharmacy Stock</a></li>
+                    <li class=""><a href="DrugInfo.html">Update Drugs</a></li>
+                    <li class=""><a href="ViewRequests.html">View Requests</a></li>
+                    <li class=""><a href="AddBatch.html">Add New Batch</a></li>
+                    <li class=""><a href="AddSup.html">New Supplier</a></li>
+					<li class=""><a href="Email.html">Email</a></li>
+					<li class=""><a href="AddDrugExcel.html">Add Drug</a></li>
+
+                </ul>
+            </div>
+
+
+        </nav>
+
+        <div class="workArea" style="height: 505px">
+
+
+            <div  ng-controller="AppCtrl2">
+
+
+
+                <form name="frm" class="form-style-9">
+                    <ul>
+                        <li>
+                            <h1>Add Supliers </h1>
+                        </li>
+
+                        <li></li>
+
+
+                        <li>
+                            <input type="text" name="Name" class="field-style field-split align-left" placeholder="Name" ng-model="supp.name" required="true">
+                           <!-- <span ng-show="frm.Name.$error.required">Required</span>-->
+                            <input type="email" class="field-style field-split align-right" placeholder="Email" ng-model="supp.email" required="true">
+
+                        </li>
+                        <li></li>
+                        <li>
+                            <input type="" class="field-style field-split align-left" placeholder="Phone Number" ng-model="supp.teleNo" maxlength="10" required="true">
+                            <input class="field-style field-split align-right" placeholder="Address" ng-model="supp.address" required="true">
+
+                        </li>
+                        <li></li>
+                        <li>
+                            <input list="cate" class="field-style field-split align-left" placeholder="Drug Name" ng-model="supp.drug" required="true">
+                            <datalist id="cate">
+                                <option value="panadol">
+                                <option value="vitaminC">
+                                <option value="Relfix">
+                                <option value="X1 injection">
+                                <option value="AAA3 injection">
+                            </datalist>
+                        </li>
+                        <li></li>
+                        <li>
+
+
+                            <button   class="btn btn-primary" ng-click="addSup()" id="add" onclick="clear()" >Add Suppliers</button>
+                            <button class="btn btn-primary" ng-click="update()" id="update" disabled>Update</button>
+                            <button  type="reset"  class="btn btn-primary" onclick="reset()" >Reset</button>
+
+                        </li>
+						<li></li>
+						<li>
+                            <div class="alert alert-success" ng-show="successMsg">
+                                <strong>Added SuccessFully!</strong>
+                            </div>
+                        </li>
+                        <li></li>
+                        <li></li>
+
+                        <li>
+                            <input type="text" class="field-style field-split align-left" ng-model="searchBoc" placeholder="Search Supplier">
+                        </li>
+
+                        <li></li>
+
+                        <li>
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Phone Number</th>
+                                    <th>Address</th>
+                                    <th>Drug</th>
+                                    <th>Delete</th>
+                                    <th>Edit</th>
+
+                                </tr>
+                                </thead>
+                                <tbody>
+
+                                <tr ng-repeat="supp in supplier | filter:searchBoc">
+
+                                    <td>{{supp.name}}</td>
+                                    <td>{{supp.email}}</td>
+                                    <td>{{supp.teleNo}}</td>
+                                    <td>{{supp.address}}</td>
+                                    <td>{{supp.drug}}</td>
+
+                                   <!-- <td><button class="btn btn-danger" ng-click="remove(contact._id)">Delete</button></td>-->
+                                    <td><button class="btn btn-primary" ng-click="remove(supp._id)">Delete</button></td>
+
+                                    <td><button class="btn btn-primary" ng-click="edit(supp._id)" onclick="button()" >Edit</button></td>
+                                    <script>
+                                        function button(){
+                                            document.getElementById("update").disabled = false;
+                                            document.getElementById("add").disabled = true;
+                                        }
+
+                                        function reset(){
+                                            document.getElementById("add").disabled = false;
+                                        }
+                                        function clear(){
+
+                                        }
+                                    </script>
+                                </tr>
+                                </tbody>
+                            </table>
+
+                        </li>
+
+
+
+                    </ul>
+
+
+                </form>
+
+
+
+
+            </div>
+
+
+
+
+
+
+        </div>
+        </div>
+
+
+</section>
+<!--/ banner-->
+
+<!--footer-->
+<footer id="footer">
+
+    <div class="footer-line">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    © Copyright Pharmacy-corp. All Rights Reserved
+
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--/ footer-->
+
+
+<!--script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script-->
+<!--<script src="controllers/controller.js"></script>-->
+<script src="JS/kalharaControoler.js"></script>
+</body>
+</html>

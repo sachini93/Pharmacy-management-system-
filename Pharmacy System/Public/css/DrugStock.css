@@ -1,0 +1,97 @@
+d1{
+    margin-top:20px;
+    margin-left:20px;
+    margin-right:10px;
+    background-color:white;
+    width:100%;
+}
+
+h3{
+    margin-top:20px;
+    margin-left:20px;
+    color: white;
+}
+
+.head1{
+    height:30px;
+    margin-bottom: 5px;
+    width: 98%;
+    margin-left:10px;
+
+}
+
+#txt1{
+    width:200px;
+    height:28px;
+    margin-right: 4px;
+    color: #FFFFFF;
+    float: right;
+
+}
+
+.tg {
+
+    table-layout: fixed;
+    width: 98%;
+
+}
+
+.tg,.tg th,.tg td{
+    border: 1px black;
+    border-style: solid;
+}
+
+.tg td{
+    font-family:Arial, sans-serif;
+    font-size:15px;
+    padding:10px 5px;
+    overflow:hidden;
+    word-break:normal;
+    color:#333;
+    background-color:#fff;
+}
+
+.tg th{
+    font-family:Arial, sans-serif;
+    font-size:16px;
+    font-weight:normal;
+    padding:10px 5px;
+    overflow:hidden;
+    word-break:normal;
+    color:#333;
+    background-color:#f0f0f0;
+    text-align: center;
+}
+
+
+
+.tg .stockHeader{
+    background-color:#9b9b9b;
+    color:#000000;
+    vertical-align:top
+}
+
+
+.price, .quantity{
+    text-align: right;
+}
+
+.placeOrder{
+    width: 100%;
+    -moz-box-shadow: inset 0px 1px 0px 0px #3985B1;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #3985B1;
+    box-shadow: inset 0px 1px 0px 0px #3985B1;
+    background-color: #216288;
+    border: 1px solid #17445E;
+    display: inline-block;
+    cursor: pointer;
+    color: #FFFFFF;
+    padding: 8px;
+    text-decoration: none;
+    font: 12px Arial, Helvetica, sans-serif;
+}
+
+.placeOrder:hover{
+    background: linear-gradient(to bottom, #2D77A2 5%, #337DA8 100%);
+    background-color: #28739E;
+}

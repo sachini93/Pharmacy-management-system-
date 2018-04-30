@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pharmacy System</title>
+    <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com">
+    <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script lang="javascript" src="xlsx.full.min.js"></script>
+    <script src="controllers/App.js"></script>
+	<script src="JS/ControllerH.js"></script> 
+    	
+    	
+
+   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway|Candal">
+    <link rel="stylesheet" type="text/css" href="css/noEdit/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/noEdit/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/noEdit/style2.css">
+	<link rel="stylesheet" type="text/css" href="css/HForm-style.css">
+	<link rel="stylesheet" type="text/css" href="css/form-kalhara.css">
+
+    <style type="text/css">
+        #TextArea1
+        {
+            height: 58px;
+            width: 304px;
+        }
+        #Button1
+        {
+            width: 134px;
+        }
+        .style1
+        {
+            width: 100%;
+        }
+        .style2
+        {
+            width: 333px
+        }
+        .style3
+        {
+            height: 38px;
+        }
+        .style4
+        {
+            width: 333px;
+            height: 38px;
+        }
+        </style>
+
+  
+</head>
+<body  ng-app="myApp">
+<!--banner-->
+<section id="banner" class="banner">
+    <div class="bg-color">
+        <div class="loggedPerson">
+            <img src="img/user1.png" width="100px" height="70px" style="float:right">
+			<p style="float:right;color:black;margin-top:20px;font-size:20px">Chief-Pharmacist</br><a href="Login.html" class="logout">(logout)</a></p>
+        </div>
+        <nav class="navbar navbar-default navbar-fixed-top" style="height: 100% ; width: 15%">
+            <div class="line">
+
+            </div>
+            <div class="navContainer">
+
+            <div class="navbar-header" style="margin-top: 30px">
+                <!--button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button-->
+                <a class="navbar-brand" href="#"><img src="img/logo-pharmacy.png"
+                                                      class="img-responsive" style="margin-top: -16px;"></a>
+            </div>
+            </br>
+            <div class="collapse navbar-collapse navbar-right" id="myNavbar" style="float: left;width: 100%">
+                <ul class="nav navbar-nav" style="padding-left: 0px">
+                    <li class="active"><a href="indexCP.html">Home</a></li>
+                    <li class=""><a href="DrugStock.html">Pharmacy Stock</a></li>
+                    <li class=""><a href="DrugInfo.html">Update Drugs</a></li>
+                    <li class=""><a href="ViewRequests.html">View Requests</a></li>
+                    <li class=""><a href="AddBatch.html">Add New Batch</a></li>
+                    <li class=""><a href="AddSup.html">New Supplier</a></li>
+					<li class=""><a href="Email.html">Email</a></li>
+					<li class=""><a href="AddDrugExcel.html">Add Drug</a></li>
+                </ul>
+            </div>
+            </div>
+
+        </nav>
+
+        <div class="develop" style="height:580px">
+            <div class="workArea" style="height:auto">
+
+                <!--Guys plz use only this workarea to code your own-->
+<div style="margin-top:20px;margin-left:40px">
+ 
+  <div style="margin-top:30px;margin-left:60px;margin-right:150px;background-color:white" ng-app="myApp" ng-controller = "myCtrlUploader">
+  </br>
+      <h3 style="margin-left:10px;">Add new drug from data sheet</h3>
+       
+
+     
+
+
+<form name="myform">
+      <table class="style1">
+          <tr>
+              <td>
+                  &nbsp;</td>
+              <td class="style2">
+                  &nbsp;</td>
+              <td>
+                  &nbsp;</td>
+          </tr>
+          <tr>
+              <td class="style3">
+              </td>
+              <td class="style4">
+              Go to this site</td>
+              <td class="style3">
+              <a href="https://shancarter.github.io/mr-data-converter/" target="_blank">Convertor</a></td>
+          </tr>
+          <tr>
+              <td>
+                  &nbsp;</td>
+              <td class="style2">
+              Enter output</td>
+              <td>
+ 
+              <textarea id="TextArea1" name="S1" ng-model="Output"  ng-required="true"></textarea></td>
+          </tr>
+          <tr>
+              <td>
+                  &nbsp;</td>
+              <td class="style2">
+                  &nbsp;</td>
+              <td>
+                  &nbsp;</td>
+          </tr>
+          <tr>
+              <td>
+                  &nbsp;</td>
+              <td class="style2">
+                  &nbsp;</td>
+              <td>
+             <input id="Button1" 
+                  style="background-color: #006699; width:131px; height:34px; color: #FFFFFF;" type="button" 
+                  value="Add Drug" ng-click="myform.$valid && addDrug(Output)"/></td>
+          </tr>
+          <tr>
+              <td>
+                  &nbsp;</td>
+              <td class="style2">
+                  &nbsp;</td>
+              <td><label id="label" ng-bind="satate" style="color: #CC0000"></label>
+                  &nbsp;</td>
+          </tr>
+      </table>
+       
+</form>
+     
+
+
+
+  </div>
+  
+ 
+  
+  </div>        
+
+        </div>
+
+        </div>
+    </div>
+
+
+</section>
+<!--/ banner-->
+
+<!--footer-->
+<footer id="footer">
+
+    <div class="footer-line">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    © Copyright Pharmacy-corp. All Rights Reserved
+
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--/ footer-->
+
+<script>
+
+ 
+</script>
+
+
+</body>
+</html>
